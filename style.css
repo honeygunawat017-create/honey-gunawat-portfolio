@@ -1,0 +1,152 @@
+/* Warm neutrals with the cream, wine, and gold palette from your reference. */
+:root {
+  --cream: #f7f2e9;
+  --paper: #fffdf8;
+  --wine: #722f40;
+  --brown: #34251f;
+  --muted: #6c5d55;
+  --gold: #8a6a36;
+  --rule: #e6ddd0;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+/* Base page, typography, and keyboard focus. */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--brown); font-family: var(--sans); font-size: 16px; line-height: 1.7; }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; }
+h1 { font-size: clamp(3.8rem, 8vw, 6.5rem); }
+h2 { margin-bottom: 24px; font-size: clamp(2.2rem, 4.5vw, 3.5rem); }
+h3 { margin-bottom: 8px; font-size: 1.5rem; }
+p { max-width: 70ch; }
+a { color: var(--wine); text-decoration: none; }
+a:hover { color: var(--brown); }
+a:focus-visible { outline: 3px solid var(--wine); outline-offset: 4px; }
+.section-shell { width: min(1080px, calc(100% - 64px)); margin-inline: auto; }
+
+/* Sticky navigation with an animated underline on hover and keyboard focus. */
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--cream); border-bottom: 1px solid var(--rule); }
+.nav-wrap { width: min(1200px, calc(100% - 64px)); min-height: 76px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.wordmark { color: var(--wine); font-family: var(--serif); font-size: 1.5rem; }
+.wordmark span { color: var(--brown); }
+.nav-links { display: flex; align-items: center; gap: clamp(12px, 2vw, 26px); }
+.nav-links a { min-height: 44px; position: relative; display: inline-flex; align-items: center; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.nav-links a::after { height: 1px; width: 0; position: absolute; right: 0; bottom: 6px; left: 0; background: var(--wine); content: ""; transition: width .2s ease; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--wine); }
+.nav-links a:hover::after, .nav-links a:focus-visible::after { width: 100%; }
+
+/* Simple hero with your name, introduction, and contact links. */
+.hero { min-height: 570px; padding-block: 86px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.hero-label { margin-bottom: 8px; color: var(--gold); font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.hero h1 { margin-bottom: 18px; }
+.hero h1 span { color: var(--wine); }
+.hero-intro { max-width: 620px; color: var(--muted); font-size: 1.05rem; }
+.hero-actions { margin-top: 16px; display: flex; align-items: center; flex-wrap: wrap; gap: 22px; }
+.button { min-height: 48px; padding: 12px 19px; display: inline-flex; align-items: center; justify-content: center; background: var(--wine); color: var(--paper); font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-align: center; text-transform: uppercase; }
+.button:hover { background: var(--brown); color: var(--paper); }
+.text-link { min-height: 44px; display: inline-flex; align-items: center; color: var(--wine); font-size: .8rem; font-weight: 700; }
+.text-link:hover { color: var(--brown); text-decoration: underline; text-underline-offset: 5px; }
+
+/* Section headings put the gold label and large number at opposite sides. */
+.about, .experience, .education, .strengths, .next-step, .contact { padding-block: 78px; border-top: 1px solid var(--rule); }
+.about, .education { background: var(--paper); }
+.section-top { margin-bottom: 34px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.section-top h2 { margin-bottom: 0; }
+.section-kicker { margin-bottom: 10px; color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.section-number { margin-left: auto; color: var(--gold); font-family: var(--serif); font-size: 2.8rem; line-height: 1; text-align: right; }
+.about > p { max-width: 760px; color: var(--muted); font-size: .98rem; }
+
+/* Experience entries share clear role labels and readable text. */
+.experience-item { padding-block: 25px; border-top: 1px solid var(--rule); }
+.experience-item:last-child { border-bottom: 1px solid var(--rule); }
+.item-label { margin-bottom: 8px; color: var(--gold); font-size: .67rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.experience-item h3 { margin-bottom: 12px; }
+.experience-item p:not(.item-label) { margin-bottom: 10px; color: var(--muted); font-size: .9rem; }
+.experience-item p:last-child { margin-bottom: 0; }
+
+/* Education rows include current degrees and confirmed school results. */
+.education-list { border-top: 1px solid var(--rule); }
+.education-item { padding: 18px 0; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.education-item h3 { margin-bottom: 3px; font-size: 1.3rem; }
+.education-item p, .education-item > span { margin: 0; color: var(--muted); font-size: .83rem; }
+.education-item > span { color: var(--wine); font-weight: 700; white-space: nowrap; }
+
+/* Strengths flow vertically and lift with a wine highlight on hover. */
+.section-intro { margin-top: -14px; margin-bottom: 24px; color: var(--muted); }
+.strength-list { border-top: 1px solid var(--rule); }
+.strength-item { padding: 18px 16px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 42px 1fr; gap: 12px; transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease; }
+.strength-item > span { color: var(--gold); font-family: var(--serif); font-size: 1.2rem; }
+.strength-item h3 { margin-bottom: 4px; font-family: var(--sans); font-size: .92rem; font-weight: 700; }
+.strength-item p { margin: 0; color: var(--muted); font-size: .84rem; }
+.strength-item:hover, .strength-item:focus-visible { transform: translateY(-4px); background: var(--wine); color: var(--paper); box-shadow: 0 9px 22px #34251f20; }
+.strength-item:hover > span, .strength-item:hover h3, .strength-item:focus-visible > span, .strength-item:focus-visible h3 { color: var(--paper); }
+.strength-item:hover p, .strength-item:focus-visible p { color: var(--paper); }
+
+/* Next-step section keeps the internship goal easy to find. */
+.next-step { background: var(--cream); }
+.next-step > p { margin-bottom: 0; color: var(--muted); font-size: .95rem; }
+
+/* Resume download and printable paper resume. */
+.resume-download { padding-block: 27px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.resume-download h2 { margin-bottom: 4px; font-size: 1.8rem; }
+.resume-download p { margin: 0; color: var(--muted); font-size: .82rem; }
+.resume-sheet { width: min(820px, calc(100% - 48px)); margin: 60px auto; padding: 48px 58px; background: var(--paper); }
+.resume-topline { padding-bottom: 8px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .12em; }
+.resume-sheet h2 { margin: 17px 0 5px; font-size: 2.6rem; }
+.resume-contact { margin-bottom: 14px; color: var(--muted); font-size: .67rem; overflow-wrap: anywhere; }
+.resume-profile { padding-bottom: 11px; border-bottom: 1px solid var(--rule); font-size: .78rem; }
+.resume-block { margin-top: 15px; }
+.resume-block h3 { margin-bottom: 7px; color: var(--wine); font-family: var(--sans); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.resume-block article { margin-top: 8px; }
+.resume-block h4 { margin: 0 0 2px; font-size: .77rem; }
+.resume-block p { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.5; }
+
+/* Contact links and footer. */
+.contact { display: block; }
+.contact-links { display: flex; align-items: flex-start; flex-direction: column; gap: 9px; }
+.site-footer { min-height: 92px; padding: 18px max(32px, calc((100% - 1080px) / 2)); border-top: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.site-footer p, .site-footer > a:last-child { margin: 0; color: var(--muted); font-size: .74rem; }
+
+/* Responsive layout for screens narrower than 700px. */
+@media (max-width: 700px) {
+  .section-shell, .nav-wrap { width: calc(100% - 40px); }
+  .nav-wrap { padding-block: 10px; align-items: flex-start; flex-direction: column; gap: 2px; }
+  .nav-links { width: 100%; gap: 15px; overflow-x: auto; }
+  .nav-links a { flex: 0 0 auto; font-size: .58rem; }
+  .hero { min-height: 470px; padding-block: 65px; }
+  .hero h1 { font-size: clamp(3.6rem, 16vw, 5.5rem); }
+  .about, .experience, .education, .strengths, .next-step, .contact { padding-block: 55px; }
+  .section-number { font-size: 2rem; }
+  .education-item { align-items: flex-start; }
+  .education-item h3 { font-size: 1.1rem; }
+  .strength-item { grid-template-columns: 34px 1fr; padding-inline: 10px; }
+  .resume-download { align-items: flex-start; flex-direction: column; }
+  .resume-sheet { width: calc(100% - 32px); margin-block: 36px; padding: 28px 20px; }
+  .site-footer { padding-inline: 20px; flex-wrap: wrap; }
+}
+
+/* Print only the resume on a single A4 page in black and white. */
+@media print {
+  @page { size: A4; margin: 13mm; }
+  body { background: #fff !important; color: #000 !important; font-family: Arial, sans-serif; font-size: 9pt; line-height: 1.3; }
+  body > header, body > footer, main > section:not(#resume) { display: none !important; }
+  main { display: block; margin: 0; }
+  #resume { display: block !important; width: 100%; margin: 0; padding: 0; background: #fff; color: #000; }
+  #resume * { color: #000 !important; }
+  #resume h2 { margin: 0 0 3pt; font: 700 24pt Arial, sans-serif; letter-spacing: 0; }
+  #resume h3, #resume h4 { font: 700 9pt Arial, sans-serif; }
+  #resume .resume-topline { padding-bottom: 5pt; border-color: #777; font-size: 7pt; }
+  #resume .resume-contact { margin-bottom: 8pt; font-size: 7.5pt; }
+  #resume .resume-profile { padding-bottom: 7pt; font-size: 9pt; }
+  #resume .resume-block { margin-top: 8pt; }
+  #resume .resume-block h3 { margin-bottom: 5pt; }
+  #resume .resume-block article { margin-top: 5pt; break-inside: avoid; }
+  #resume .resume-block p { font-size: 8pt; line-height: 1.3; }
+  a { text-decoration: none; }
+}
+
+/* Respect motion-reduction settings while keeping hover colours available. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; transform: none !important; }
+}
